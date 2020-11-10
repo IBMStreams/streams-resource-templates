@@ -1,0 +1,69 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: "example-resource-template-multi-configmap"
+  labels:
+    streams-custom-resource-template: "true"
+ 
+data:
+
+application.yaml: |
+   apiVersion: v1
+   kind: Pod
+   metadata:
+     annotations:
+       mytest: "Special annotation"
+     labels:
+       testapp: speciallabel
+   spec:
+   
+     volumes:   
+       - name: shm-volume
+         emptyDir:
+           medium: Memory
+        
+     containers:
+       - name: controller
+         image: <docker-registry-url>/streams-application-el7:<docker-tag>
+         imagePullPolicy: Always
+         
+         resources:
+           limits:
+             cpu: 1
+             memory: 1Gi
+           requests:
+             cpu: 200m
+             memory: 1Gi
+         
+         volumeMounts:
+           - mountPath: /dev/shm
+             name: shm-volume
+
+ examplepvc.yaml: |
+   apiVersion: v1
+   kind: Pod
+   metadata:
+     annotations:
+       mytest: "test pvc annotation"
+     labels:
+       testapp: testpvclabel
+   spec:
+       
+     containers:
+       - name: controller
+         image: <docker-registry-url>/streams-application-el7:<docker-tag>
+         imagePullPolicy: Always
+         
+         env:
+           - name: MY_PVC
+             value: "/opt/ibm/example-resource-template-config-pvc"
+         
+         volumeMounts:
+           - mountPath: /opt/ibm/example-resource-template-config-pvc
+             name: example-resource-template-pvc-volume
+      
+     volumes:
+       - name: example-resource-template-pvc-volume
+         persistentVolumeClaim:
+           claimName: example-resource-template-pvc
+           
