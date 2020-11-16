@@ -1,0 +1,31 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: "example-resource-template-new-user"
+  labels:
+    streams-custom-resource-template: "true"
+ 
+data:
+ 
+ newuser.yaml: |
+   apiVersion: v1
+   kind: Pod
+   metadata:
+     annotations:
+       mytest: "my new user annotation"
+     labels:
+       testapp: myNewUserLabel
+   spec:
+     imagePullSecrets:
+       - name: <secret-name>
+       
+     securityContext:
+       runAsGroup: 1000360000
+       runAsNonRoot: true
+       runAsUser: 1000360000
+       
+     containers:
+       - name: controller
+         image: <new-custom-image-registry-name>/<new-custom-image-name>:<new-custom-image-tag>
+         imagePullPolicy: Always
+
