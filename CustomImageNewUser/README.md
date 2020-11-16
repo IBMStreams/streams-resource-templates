@@ -6,7 +6,7 @@ Included in this example are the following files:
 
 **NOTES:** 
 1. The custom application image must be built from the Streams default application image (streams-application-el7).  You must have a Docker environment to build the image and the URL to a Docker registry to publish the image.  You need to know the Docker registry URL and Docker tag for the default application image for your environment. This will be specified in the Dockerfile. Ask your administrator for this information.
-2. For details on the docker registry when using the Red Hat OpenShift® registry see this step, [Collecting information about your cluster from your administrator](https://www.ibm.com/support/producthub/icpdata/docs/content/SSQNUZ_current/cpd/install/svc-install-prep.html?view=kc$svc-install-prep__collect-info). Locate the _Registry_location_ and _Registry_from_cluster_ table entries.
+2. For details on the docker registry when using the Red Hat OpenShift® registry see this step, [Collecting information about your cluster from your administrator](https://www.ibm.com/support/knowledgecenter/SSQNUZ_latest/cpd/install/svc-install-prep.html?view=kc$svc-install-prep__collect-info). Locate the _Registry_location_ and _Registry_from_cluster_ table entries.
 3. The configuration map must include the label streams-custom-resource-template: "true". This label ensures that when a Streams instance is provisioned or an existing Streams instance is edited, the configuration map name can be selected from the list of available configuration maps.
 4. The container name in the pod specification template must be controller.
 
@@ -16,4 +16,6 @@ Included in this example are the following files:
        - name: <secret-name>     
   ``` 
 
-For details about how to build a Docker image and specify the custom resource templates, see [**_Customizing your application resource_**](https://www.ibm.com/support/producthub/icpdata/docs/content/SSQNUZ_current/svc-streams/admin-app.html).
+For details about how to build a Docker image and specify the custom resource templates, see [**_Customizing your application resource_**](https://www.ibm.com/support/knowledgecenter/SSQNUZ_latest/svc-streams/admin-app.html).
+
+A sample script, build.sh, can be used to build a custom application image. For details, download the script and run ./build.sh --help. The script is in the base directory for this repository.

@@ -1,4 +1,4 @@
-ARG DEP_IMAGE_TAG=<default-application-image-tag>
+ARG DEP_IMAGE_TAG=5.5.0.0-27
 ARG DEP_IMAGE_REG=<default-application-image-registry>
 FROM ${DEP_IMAGE_REG}streams-application-el7:$DEP_IMAGE_TAG
 
@@ -17,4 +17,4 @@ RUN groupadd ${MY_USER_NAME} --gid ${MY_GROUP}  &&           \
 
 # IMPORTANT: Switch back to a user. The USER cannot be root. The ${STREAMS_USER_NAME} environment variable can be used to switch to the default application user: streamsapp.
 USER "${MY_USER}"
-WORKDIR "/home/${USER}"
+WORKDIR "/home/${MY_USER}"

@@ -19,5 +19,8 @@ If your application requires different Kubernetes characteristics than what is p
 ### Use Geospatial toolkit and creating custom resource template
 If you use a custom resource template and you have an application that requires the geospatial toolkit, the shared volume must be defined as an emptyDir volume. The geospatial toolkit requires more shared memory than the Docker default. For an example, see the following directory: **CustomDefaultTagAndPVC**.
 
+### Tooling
+A sample script, build.sh, can be used to build a custom application image. For details, download the script and run ./build.sh --help. The script is in the base directory for this repository.
+
 ### Reference
-For details about customizing your application resoures, see [**_Customizing your application resource_**](https://www.ibm.com/support/producthub/icpdata/docs/content/SSQNUZ_current/svc-streams/admin-app.html).
+For details about customizing your application resoures, see [**_Customizing your application resource_**](https://www.ibm.com/support/knowledgecenter/SSQNUZ_latest/svc-streams/admin-app.html).

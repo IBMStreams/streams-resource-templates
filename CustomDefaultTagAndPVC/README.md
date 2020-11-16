@@ -31,6 +31,6 @@ The persistent volume and persistent volume claim must meet the following requir
 
 
 ## References:
-For more details about how to create and specify the custom resource templates, see [Creating a Streams application resource template](https://www.ibm.com/support/producthub/icpdata/docs/content/SSQNUZ_current/svc-streams/admin-app-appresource-template.html).
+For more details about how to create and specify the custom resource templates, see [Creating a Streams application resource template](https://www.ibm.com/support/knowledgecenter/SSQNUZ_latest/svc-streams/admin-app-appresource-template.html).
 
 
