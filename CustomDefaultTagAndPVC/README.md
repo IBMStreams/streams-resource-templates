@@ -22,7 +22,7 @@ To create the persistent storage, do the following tasks:
  oc create -f example-resource-template-pvc.yaml.
 ```
 
-Your application might require your PVC to be primed with files before you run the application. If so, you can follow the instructions in this RedHat blog:  https://www.openshift.com/blog/transferring-files-in-and-out-of-containers-in-openshift-part-3.  Another option is to use a Kubernetes job to prime the PVC. 
+Your application might require your PVC to be primed with files before you run the application. If so, you can follow the instructions in this RedHat blog: [Transferring Files In and Out of Containers in OpenShift, Part 2: Synchronizing Files with a Container](https://www.openshift.com/blog/transferring-files-in-and-out-of-containers-in-openshift-part-2).  Another option is to use a Kubernetes job to prime the PVC. 
 
 The persistent volume and persistent volume claim must meet the following requirements:
 * The persistent volume must allow for ReadWriteMany access and the persistent volume claim must be set up with RWX access mode.
