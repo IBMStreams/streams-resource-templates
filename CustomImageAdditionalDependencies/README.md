@@ -19,6 +19,6 @@ The following files are included in this example:
        - name: <secret-name>     
   ``` 
 
-For details about how to build a Docker image and specify the custom resource templates, see [**_Customizing your application resource_**]https://www.ibm.com/support/knowledgecenter/SSQNUZ_latest/svc-streams/admin-app.html).
+For details about how to build a Docker image and specify the custom resource templates, see [**_Customizing your application resource_**](https://www.ibm.com/support/knowledgecenter/SSQNUZ_latest/svc-streams/admin-app.html).
 
 A sample script, build.sh, can be used to build a custom application image. For details, download the script and run ./build.sh --help. The script is in the base directory for this repository.
