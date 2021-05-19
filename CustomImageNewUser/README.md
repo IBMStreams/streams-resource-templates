@@ -1,3 +1,5 @@
+**NOTE:** Running an application with a specified user UID is only supported on Streams 5.5.x.x code base.
+
 By default, application resources run as the streamsapp user.  To run an application resource with a different user, you must create a custom application image and create a custom resource template. This example will demonstrate how to create and run the resource with a different user.
 
 Included in this example are the following files:
