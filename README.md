@@ -8,6 +8,7 @@ _An application image and application resource template are used in your applica
 If you require additional dependencies that are not provided in the default application image, you must create a custom application image and a custom resource template. For an example, see the following directory: **CustomImageAdditionalDependencies**.
 
 ### Customizing the user:
+NOTE: Running an application with a specified user UID is only supported on Streams 5.5.x.x code base.
 All application pods by default are run with the streamsapp user.  If you need to run your application with a different user, you must create a custom application image and a custom resource template. For an example, see the following directory: **CustomImageNewUser**.
 
 ### Using persistent storage:
